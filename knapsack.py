@@ -6,11 +6,11 @@ from collections import namedtuple
 item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-  cache = [[0]*(capacity+1) for _ in range(len(items)+1)]
+  cache = [[0] * (capacity + 1) for _ in range(len(items)+1)]
 
   bag = set()
 
-  for range in range(1,len(cache)):
+  for item in range(1,len(cache)):
     for size in range(len(cache[item])):
 
       if items[item-1].size>size:
